@@ -510,6 +510,7 @@
       } else if (input.id.includes('ounces') || input.id.includes('pounds') || input.id.includes('kilos') || input.id.includes('stones')) {
         document.getElementById('temp-form').style.display = 'none';
         document.getElementById('length-form').style.display = 'none';
+        document.querySelector('h1').style.display = 'none';
         if (input.id.includes('ounces')) {
 
           let ounces = e.target.value;
