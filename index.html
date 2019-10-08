@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style>
+    body {
+      margin-top: 30px;
+      background: #444;
+      color: #fdfdfd;
+    }
+
+    h1 {
+      color: #fff;
+      padding-bottom: 20px;
+    }
+
+    input {
+      text-align: center;
+    }
+
+    input,
+    .card {
+      margin-bottom: 5px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    .form-group-header {
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      padding: 5px;
+      display: inline-block;
+    }
+
+    label {
+      padding-left: 5px;
+      padding-top: 7px;
+      text-align: left;
+    }
+
+    #top-row label {
+      padding-top: 3px;
+      ;
+    }
+
+    .form-label {
+      padding-left: 5px;
+      ;
+    }
+
+    .output {
+      display: none;
+      padding: 0;
+    }
+
+    .card-text {
+      text-align: center;
+    }
+  </style>
+
+  <title>Unit Converter app</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h1 class="display-4 text-center mb-3 font-weight-bold">All-In-One <br>Unit Converter</h1>
+
+        <!--- <TEMPERATURE FORM> --->
+
+        <form class="input-form" id="temp-form" action="">
+          <div class="form-group text-center">
+            <h2 class="form-group-header text-success">Temperature</h2>
+            <div class="row input-label-box">
+              <input type="number" class="form-group-input form-control col-2 offset-3" placeholder="&deg;C"
+                id="celsius-input">
+              <label for="celsius-input"><span>&deg;C</span></label>
+              <input type="number" class="form-group-input form-control col-2 offset-1" placeholder="&deg;F"
+                id="fahrenheit-input">
+              <label for="fahrenheit-input"><span>&deg;F</span></label>
+            </div>
+          </div>
+        </form>
+
+        <!--- </TEMPERATURE FORM> --->
+
+        <!--- <TEMPERATURE OUTPUT> --->
+
+        <div class="col-6 offset-3" id="temp-output">
+          <div class="card bg-success output" id="celsius-output">
+            <div class="card-body">
+              <div class="card-text" id="celsius-text"></div>
+            </div>
+          </div>
+          <div class="card bg-success output" id="fahrenheit-output">
+            <div class="card-body">
+              <div class="card-text" id="fahrenheit-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!--- </TEMPERATURE OUTPUT> --->
+
+        <!--- <LENGTH(DISTANCE) FORM> --->
+
+        <form class="input-form" action="" id="length-form">
+          <div class="form-group text-center">
+            <h2 class="form-group-header text-warning">Length <br>(Distance)</h2>
+            <div class="row input-label-box pl-3 mb-3" id="top-row">
+              <input type="number" class="form-group-input form-control col-2 offset-3" placeholder="inches"
+                id="inches-input">
+              <label class="form-label col-1" for="inches-input"><span>&Prime;</span></label>
+
+              <input type="number" class="form-group-input form-control col-2" placeholder="feet" id="feet-input">
+              <label class="form-label col-1" for="feet-input"><span>&prime;</span></label>
+            </div>
+            <div class="row input-label-box">
+
+              <input type="number" class="form-group-input form-control col-2 offset-2" placeholder="yards"
+                id="yards-input">
+              <label class="form-label col-1" for="yards-input"><span>yd</span></label>
+
+              <input type="number" class="form-group-input form-control col-2" placeholder="metres" id="metres-input">
+              <label class="form-label col-1" for="metres-input"><span>m</span></label>
+              <input type="number" class="form-group-input form-control col-2" placeholder="miles" id="miles-input">
+              <label class="form-label col-1" for="miles-input"><span>mi</span></label>
+            </div>
+          </div>
+        </form>
+
+        <!--- </LENGTH(DISTANCE) FORM> --->
+
+        <!--- <LENGTH(DISTANCE) OUTPUT> --->
+
+        <div class="col-6 offset-3" id="length-output">
+          <div class="card bg-warning output" id="inches-output">
+            <div class="card-body">
+              <div class="card-text" id="inches-text"></div>
+            </div>
+          </div>
+          <div class="card bg-warning output" id="feet-output">
+            <div class="card-body">
+              <div class="card-text" id="feet-text"></div>
+            </div>
+          </div>
+          <div class="card bg-warning output" id="yards-output">
+            <div class="card-body">
+              <div class="card-text" id="yards-text"></div>
+            </div>
+          </div>
+          <div class="card bg-warning output" id="metres-output">
+            <div class="card-body">
+              <div class="card-text" id="metres-text"></div>
+            </div>
+          </div>
+          <div class="card bg-warning output" id="miles-output">
+            <div class="card-body">
+              <div class="card-text" id="miles-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!--- </LENGTH(DISTANCE) OUTPUT> --->
+
+        <!--- <MASS(WEIGHT) FORM> --->
+
+        <form action="" class="input-form" id="mass-form">
+          <div class="form-group text-center">
+            <h2 class="form-group-header text-primary">Mass <br>(Weight)</h2>
+            <div class="row input-label-box">
+              <input type="number" class="form-group-input form-control col-2" placeholder="ounces" id="ounces-input">
+              <label for="ounces-input" class="form-label col-1"><span>oz</span></label>
+              <input type="number" class="form-group-input form-control col-2" placeholder="pounds" id="pounds-input">
+              <label for="pounds-input" class="form-label col-1"><span>lb</span></label>
+              <input type="number" class="form-group-input form-control col-2" placeholder="kilograms" id="kilos-input">
+              <label for="kilos-input" class="form-label col-1"><span>kg</span></label>
+              <input type="number" class="form-group-input form-control col-2" placeholder="stones" id="stones-input">
+              <label for="stones-input" class="form-label col-1"><span>st</span></label>
+            </div>
+          </div>
+        </form>
+
+        <!--- </MASS(WEIGHT) FORM> --->
+
+        <!--- <MASS(WEIGHT) OUTPUT> --->
+
+        <div class="col-6 offset-3" id="mass-output">
+          <div class="card bg-primary output" id="ounces-output">
+            <div class="card-body">
+              <div class="card-text" id="ounces-text"></div>
+            </div>
+          </div>
+          <div class="card bg-primary output" id="pounds-output">
+            <div class="card-body">
+              <div class="card-text" id="pounds-text"></div>
+            </div>
+          </div>
+          <div class="card bg-primary output" id="kilos-output">
+            <div class="card-body">
+              <div class="card-text" id="kilos-text"></div>
+            </div>
+          </div>
+          <div class="card bg-primary output" id="stones-output">
+            <div class="card-body">
+              <div class="card-text" id="stones-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!--- </MASS(WEIGHT) OUTPUT> --->
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    let inputArray = document.querySelectorAll('input');
+
+    inputArray.forEach(input => input.addEventListener('input', function (e) {
+
+      if (input.id.includes('celsius')) {
+
+        let celsius = e.target.value;
+
+        document.getElementById('celsius-text').parentElement.parentElement.style.display = 'none';
+        document.getElementById('fahrenheit-input').style.display = 'none';
+        document.getElementById('fahrenheit-input').nextElementSibling.style.display = 'none';
+        document.getElementById('fahrenheit-output').style.display = 'block';
+        document.getElementById('fahrenheit-text').innerHTML = "<b>= " + ((celsius * 9 / 5) + 32).toFixed(2) + "&deg;F</b>";
+        document.getElementById('celsius-input').className = 'form-group-input form-control offset-5 col-2';
+        document.getElementById('length-form').style.display = 'none';
+        document.getElementById('mass-form').style.display = 'none';
+
+        // this.parentElement.parentElement.parentElement.onmouseleave = function() {
+        //   document.getElementById('fahrenheit-output').style.display = 'none';
+        //   document.getElementById('fahrenheit-input').style.display = 'block';
+        //   document.getElementById('fahrenheit-input').nextElementSibling.style.display = 'block';
+        //   document.getElementById('celsius-input').className = 'form-group-input form-control offset-3 col-2';
+        // }
+
+        setTimeout(() => {
+          document.getElementById('fahrenheit-output').style.display = 'none';
+          document.getElementById('fahrenheit-input').style.display = 'block';
+          document.getElementById('fahrenheit-input').nextElementSibling.style.display = 'block';
+          document.getElementById('celsius-input').className = 'form-group-input form-control offset-3 col-2';
+          document.getElementById('length-form').style.display = 'block';
+          document.getElementById('mass-form').style.display = 'block';
+        }, 8000);
+      } else if (input.id.includes('fahrenheit')) {
+        let fahrenheit = e.target.value;
+
+        document.getElementById('fahrenheit-text').parentElement.parentElement.style.display = 'none';
+        document.getElementById('celsius-input').style.display = 'none';
+        document.getElementById('celsius-input').nextElementSibling.style.display = 'none';
+        document.getElementById('celsius-output').style.display = 'block';
+        document.getElementById('celsius-text').innerHTML = "<b>= " + ((fahrenheit - 32) * 5 / 9).toFixed(2) + "&deg;C</b>";
+        document.getElementById('fahrenheit-input').className = 'form-group-input form-control offset-5 col-2';
+        document.getElementById('fahrenheit-input').style.textAlign = 'center';
+        document.getElementById('length-form').style.display = 'none';
+        document.getElementById('mass-form').style.display = 'none';
+
+        setTimeout(() => {
+          document.getElementById('celsius-output').style.display = 'none';
+          document.getElementById('celsius-input').style.display = 'block';
+          document.getElementById('celsius-input').nextElementSibling.style.display = 'block';
+          document.getElementById('fahrenheit-input').className = 'form-group-input form-control offset-1 col-2';
+          document.getElementById('length-form').style.display = 'block';
+          document.getElementById('mass-form').style.display = 'block';
+        }, 8000);
+      } else if (input.id.includes('inches') || input.id.includes('feet') || input.id.includes('yards') || input.id.includes('metres') || input.id.includes('miles')) {
+        document.getElementById('temp-form').style.display = 'none';
+        document.getElementById('mass-form').style.display = 'none';
+
+        if (input.id.includes('inches')) {
+
+          let inches = e.target.value;
+
+          document.getElementById('feet-output').style.display = 'block';
+          document.getElementById('feet-text').innerHTML = "<b>= " + (inches / 12).toFixed(2) + "&prime;</b>";
+          document.getElementById('yards-output').style.display = 'block';
+          document.getElementById('yards-text').innerHTML = "<b>= " + (inches / 36).toFixed(2) + " yd</b>";
+          document.getElementById('metres-output').style.display = 'block';
+          document.getElementById('metres-text').innerHTML = "<b>= " + (inches / 39.37).toFixed(2) + " m</b>";
+          document.getElementById('miles-output').style.display = 'block';
+          document.getElementById('miles-text').innerHTML = "<b>= " + (inches / 63360).toFixed(5) + " mi</b>";
+
+          document.getElementById('feet-input').style.display = 'none';
+          document.getElementById('feet-input').nextElementSibling.style.display = 'none';
+          document.getElementById('yards-input').style.display = 'none';
+          document.getElementById('yards-input').nextElementSibling.style.display = 'none';
+          document.getElementById('metres-input').style.display = 'none';
+          document.getElementById('metres-input').nextElementSibling.style.display = 'none';
+          document.getElementById('miles-input').style.display = 'none';
+          document.getElementById('miles-input').nextElementSibling.style.display = 'none';
+          document.getElementById('inches-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('feet-output').style.display = 'none';
+            document.getElementById('yards-output').style.display = 'none';
+            document.getElementById('metres-output').style.display = 'none';
+            document.getElementById('miles-output').style.display = 'none';
+            document.getElementById('feet-input').style.display = 'block';
+            document.getElementById('yards-input').style.display = 'block';
+            document.getElementById('metres-input').style.display = 'block';
+            document.getElementById('miles-input').style.display = 'block';
+            document.getElementById('feet-input').nextElementSibling.style.display = 'block';
+            document.getElementById('yards-input').nextElementSibling.style.display = 'block';
+            document.getElementById('metres-input').nextElementSibling.style.display = 'block';
+            document.getElementById('miles-input').nextElementSibling.style.display = 'block';
+            document.getElementById('inches-input').className = 'form-group-input form-control col-2 offset-3';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('mass-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('feet')) {
+
+          let feet = e.target.value;
+
+          document.getElementById('inches-output').style.display = 'block';
+          document.getElementById('inches-text').innerHTML = "<b>= " + (feet * 12).toFixed(2) + "&Prime;</b>";
+          document.getElementById('yards-output').style.display = 'block';
+          document.getElementById('yards-text').innerHTML = "<b>= " + (feet / 3).toFixed(2) + " yd</b>";
+          document.getElementById('metres-output').style.display = 'block';
+          document.getElementById('metres-text').innerHTML = "<b>= " + (feet / 3.281).toFixed(2) + " m</b>";
+          document.getElementById('miles-output').style.display = 'block';
+          document.getElementById('miles-text').innerHTML = "<b>= " + (feet / 5280).toFixed(4) + " mi</b>";
+
+          document.getElementById('inches-input').style.display = 'none';
+          document.getElementById('inches-input').nextElementSibling.style.display = 'none';
+          document.getElementById('yards-input').style.display = 'none';
+          document.getElementById('yards-input').nextElementSibling.style.display = 'none';
+          document.getElementById('metres-input').style.display = 'none';
+          document.getElementById('metres-input').nextElementSibling.style.display = 'none';
+          document.getElementById('miles-input').style.display = 'none';
+          document.getElementById('miles-input').nextElementSibling.style.display = 'none';
+          document.getElementById('feet-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('inches-output').style.display = 'none';
+            document.getElementById('yards-output').style.display = 'none';
+            document.getElementById('metres-output').style.display = 'none';
+            document.getElementById('miles-output').style.display = 'none';
+            document.getElementById('inches-input').style.display = 'block';
+            document.getElementById('yards-input').style.display = 'block';
+            document.getElementById('metres-input').style.display = 'block';
+            document.getElementById('miles-input').style.display = 'block';
+            document.getElementById('inches-input').nextElementSibling.style.display = 'block';
+            document.getElementById('yards-input').nextElementSibling.style.display = 'block';
+            document.getElementById('metres-input').nextElementSibling.style.display = 'block';
+            document.getElementById('miles-input').nextElementSibling.style.display = 'block';
+            document.getElementById('inches-input').className = 'form-group-input form-control col-2 offset-3';
+            document.getElementById('feet-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('mass-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('yards')) {
+
+          let yards = e.target.value;
+
+          document.getElementById('inches-output').style.display = 'block';
+          document.getElementById('inches-text').innerHTML = "<b>= " + (yards * 36).toFixed(2) + "&Prime;</b>";
+          document.getElementById('feet-output').style.display = 'block';
+          document.getElementById('feet-text').innerHTML = "<b>= " + (yards * 3).toFixed(2) + "&prime;</b>";
+          document.getElementById('metres-output').style.display = 'block';
+          document.getElementById('metres-text').innerHTML = "<b>= " + (yards / 1.094).toFixed(2) + " m</b>";
+          document.getElementById('miles-output').style.display = 'block';
+          document.getElementById('miles-text').innerHTML = "<b>= " + (yards / 1760).toFixed(4) + " mi</b>";
+
+          document.getElementById('inches-input').style.display = 'none';
+          document.getElementById('inches-input').nextElementSibling.style.display = 'none';
+          document.getElementById('feet-input').style.display = 'none';
+          document.getElementById('feet-input').nextElementSibling.style.display = 'none';
+          document.getElementById('metres-input').style.display = 'none';
+          document.getElementById('metres-input').nextElementSibling.style.display = 'none';
+          document.getElementById('miles-input').style.display = 'none';
+          document.getElementById('miles-input').nextElementSibling.style.display = 'none';
+          document.getElementById('yards-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('inches-output').style.display = 'none';
+            document.getElementById('feet-output').style.display = 'none';
+            document.getElementById('metres-output').style.display = 'none';
+            document.getElementById('miles-output').style.display = 'none';
+            document.getElementById('inches-input').style.display = 'block';
+            document.getElementById('feet-input').style.display = 'block';
+            document.getElementById('metres-input').style.display = 'block';
+            document.getElementById('miles-input').style.display = 'block';
+            document.getElementById('inches-input').nextElementSibling.style.display = 'block';
+            document.getElementById('feet-input').nextElementSibling.style.display = 'block';
+            document.getElementById('metres-input').nextElementSibling.style.display = 'block';
+            document.getElementById('miles-input').nextElementSibling.style.display = 'block';
+            document.getElementById('inches-input').className = 'form-group-input form-control col-2 offset-3';
+            document.getElementById('feet-input').className = 'form-group-input form-control col-2';
+            document.getElementById('yards-input').className = 'form-group-input form-control col-2 offset-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('mass-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('metres')) {
+
+          let metres = e.target.value;
+
+          document.getElementById('inches-output').style.display = 'block';
+          document.getElementById('inches-text').innerHTML = "<b>= " + (metres * 39.37).toFixed(2) + "&Prime;</b>";
+          document.getElementById('feet-output').style.display = 'block';
+          document.getElementById('feet-text').innerHTML = "<b>= " + (metres * 3.281).toFixed(2) + "&prime;</b>";
+          document.getElementById('yards-output').style.display = 'block';
+          document.getElementById('yards-text').innerHTML = "<b>= " + (metres * 1.094).toFixed(2) + " yd</b>";
+          document.getElementById('miles-output').style.display = 'block';
+          document.getElementById('miles-text').innerHTML = "<b>= " + (metres / 1609.344).toFixed(4) + " mi</b>";
+
+          document.getElementById('inches-input').style.display = 'none';
+          document.getElementById('inches-input').nextElementSibling.style.display = 'none';
+          document.getElementById('feet-input').style.display = 'none';
+          document.getElementById('feet-input').nextElementSibling.style.display = 'none';
+          document.getElementById('yards-input').style.display = 'none';
+          document.getElementById('yards-input').nextElementSibling.style.display = 'none';
+          document.getElementById('miles-input').style.display = 'none';
+          document.getElementById('miles-input').nextElementSibling.style.display = 'none';
+          document.getElementById('metres-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('inches-output').style.display = 'none';
+            document.getElementById('feet-output').style.display = 'none';
+            document.getElementById('yards-output').style.display = 'none';
+            document.getElementById('miles-output').style.display = 'none';
+            document.getElementById('inches-input').style.display = 'block';
+            document.getElementById('feet-input').style.display = 'block';
+            document.getElementById('yards-input').style.display = 'block';
+            document.getElementById('miles-input').style.display = 'block';
+            document.getElementById('inches-input').nextElementSibling.style.display = 'block';
+            document.getElementById('feet-input').nextElementSibling.style.display = 'block';
+            document.getElementById('yards-input').nextElementSibling.style.display = 'block';
+            document.getElementById('miles-input').nextElementSibling.style.display = 'block';
+            // document.getElementById('inches-input').className = 'form-group-input form-control col-2 offset-3';
+            // document.getElementById('feet-input').className = 'form-group-input form-control col-2';
+            // document.getElementById('yards-input').className = 'form-group-input form-control col-2 offset-2';
+            document.getElementById('metres-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('mass-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('miles')) {
+
+          let miles = e.target.value;
+
+          document.getElementById('inches-output').style.display = 'block';
+          document.getElementById('inches-text').innerHTML = "<b>= " + (miles * 63360).toFixed(2) + "&Prime;</b>";
+          document.getElementById('feet-output').style.display = 'block';
+          document.getElementById('feet-text').innerHTML = "<b>= " + (miles * 5280).toFixed(2) + "&prime;</b>";
+          document.getElementById('yards-output').style.display = 'block';
+          document.getElementById('yards-text').innerHTML = "<b>= " + (miles * 1760).toFixed(2) + " yd</b>";
+          document.getElementById('metres-output').style.display = 'block';
+          document.getElementById('metres-text').innerHTML = "<b>= " + (miles * 1609.344).toFixed(2) + " m</b>";
+
+          document.getElementById('inches-input').style.display = 'none';
+          document.getElementById('inches-input').nextElementSibling.style.display = 'none';
+          document.getElementById('feet-input').style.display = 'none';
+          document.getElementById('feet-input').nextElementSibling.style.display = 'none';
+          document.getElementById('yards-input').style.display = 'none';
+          document.getElementById('yards-input').nextElementSibling.style.display = 'none';
+          document.getElementById('metres-input').style.display = 'none';
+          document.getElementById('metres-input').nextElementSibling.style.display = 'none';
+          document.getElementById('miles-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('inches-output').style.display = 'none';
+            document.getElementById('feet-output').style.display = 'none';
+            document.getElementById('yards-output').style.display = 'none';
+            document.getElementById('metres-output').style.display = 'none';
+            document.getElementById('inches-input').style.display = 'block';
+            document.getElementById('feet-input').style.display = 'block';
+            document.getElementById('yards-input').style.display = 'block';
+            document.getElementById('metres-input').style.display = 'block';
+            document.getElementById('inches-input').nextElementSibling.style.display = 'block';
+            document.getElementById('feet-input').nextElementSibling.style.display = 'block';
+            document.getElementById('yards-input').nextElementSibling.style.display = 'block';
+            document.getElementById('metres-input').nextElementSibling.style.display = 'block';
+            document.getElementById('miles-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('mass-form').style.display = 'block';
+          }, 8000);
+        }
+      } else if (input.id.includes('ounces') || input.id.includes('pounds') || input.id.includes('kilos') || input.id.includes('stones'))  {
+        document.getElementById('temp-form').style.display = 'none';
+        document.getElementById('length-form').style.display = 'none';
+        if (input.id.includes('ounces')) {
+
+          let ounces = e.target.value;
+
+          document.getElementById('pounds-output').style.display = 'block';
+          document.getElementById('pounds-text').innerHTML = "<b>= " + (ounces / 16).toFixed(2) + " lb</b>";
+          document.getElementById('kilos-output').style.display = 'block';
+          document.getElementById('kilos-text').innerHTML = "<b>= " + (ounces / 35.274).toFixed(2) + " kg</b>";
+          document.getElementById('stones-output').style.display = 'block';
+          document.getElementById('stones-text').innerHTML = "<b>= " + (ounces / 224).toFixed(3) + " st</b>";
+
+          document.getElementById('pounds-input').style.display = 'none';
+          document.getElementById('pounds-input').nextElementSibling.style.display = 'none';
+          document.getElementById('kilos-input').style.display = 'none';
+          document.getElementById('kilos-input').nextElementSibling.style.display = 'none';
+          document.getElementById('stones-input').style.display = 'none';
+          document.getElementById('stones-input').nextElementSibling.style.display = 'none';
+          document.getElementById('ounces-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('pounds-output').style.display = 'none';
+            document.getElementById('kilos-output').style.display = 'none';
+            document.getElementById('stones-output').style.display = 'none';
+            document.getElementById('pounds-input').style.display = 'block';
+            document.getElementById('kilos-input').style.display = 'block';
+            document.getElementById('stones-input').style.display = 'block';
+            document.getElementById('pounds-input').nextElementSibling.style.display = 'block';
+            document.getElementById('kilos-input').nextElementSibling.style.display = 'block';
+            document.getElementById('stones-input').nextElementSibling.style.display = 'block';
+            document.getElementById('ounces-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('length-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('pounds')) {
+
+          let pounds = e.target.value;
+
+          document.getElementById('ounces-output').style.display = 'block';
+          document.getElementById('ounces-text').innerHTML = "<b>= " + (pounds * 16).toFixed(2) + " oz</b>";
+          document.getElementById('kilos-output').style.display = 'block';
+          document.getElementById('kilos-text').innerHTML = "<b>= " + (pounds / 2.205).toFixed(2) + " kg</b>";
+          document.getElementById('stones-output').style.display = 'block';
+          document.getElementById('stones-text').innerHTML = "<b>= " + (pounds / 14).toFixed(2) + " st</b>";
+
+          document.getElementById('ounces-input').style.display = 'none';
+          document.getElementById('ounces-input').nextElementSibling.style.display = 'none';
+          document.getElementById('kilos-input').style.display = 'none';
+          document.getElementById('kilos-input').nextElementSibling.style.display = 'none';
+          document.getElementById('stones-input').style.display = 'none';
+          document.getElementById('stones-input').nextElementSibling.style.display = 'none';
+          document.getElementById('pounds-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('ounces-output').style.display = 'none';
+            document.getElementById('kilos-output').style.display = 'none';
+            document.getElementById('stones-output').style.display = 'none';
+            document.getElementById('ounces-input').style.display = 'block';
+            document.getElementById('kilos-input').style.display = 'block';
+            document.getElementById('stones-input').style.display = 'block';
+            document.getElementById('ounces-input').nextElementSibling.style.display = 'block';
+            document.getElementById('kilos-input').nextElementSibling.style.display = 'block';
+            document.getElementById('stones-input').nextElementSibling.style.display = 'block';
+            document.getElementById('pounds-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('length-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('kilos')) {
+
+          let kilos = e.target.value;
+
+          document.getElementById('ounces-output').style.display = 'block';
+          document.getElementById('ounces-text').innerHTML = "<b>= " + (kilos * 35.274).toFixed(2) + " oz</b>";
+          document.getElementById('pounds-output').style.display = 'block';
+          document.getElementById('pounds-text').innerHTML = "<b>= " + (kilos * 2.205).toFixed(2) + " lb</b>";
+          document.getElementById('stones-output').style.display = 'block';
+          document.getElementById('stones-text').innerHTML = "<b>= " + (kilos / 6.35).toFixed(2) + " st</b>";
+
+          document.getElementById('ounces-input').style.display = 'none';
+          document.getElementById('ounces-input').nextElementSibling.style.display = 'none';
+          document.getElementById('pounds-input').style.display = 'none';
+          document.getElementById('pounds-input').nextElementSibling.style.display = 'none';
+          document.getElementById('stones-input').style.display = 'none';
+          document.getElementById('stones-input').nextElementSibling.style.display = 'none';
+          document.getElementById('kilos-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('ounces-output').style.display = 'none';
+            document.getElementById('pounds-output').style.display = 'none';
+            document.getElementById('stones-output').style.display = 'none';
+            document.getElementById('ounces-input').style.display = 'block';
+            document.getElementById('pounds-input').style.display = 'block';
+            document.getElementById('stones-input').style.display = 'block';
+            document.getElementById('ounces-input').nextElementSibling.style.display = 'block';
+            document.getElementById('pounds-input').nextElementSibling.style.display = 'block';
+            document.getElementById('stones-input').nextElementSibling.style.display = 'block';
+            document.getElementById('kilos-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('length-form').style.display = 'block';
+          }, 8000);
+        } else if (input.id.includes('stones')) {
+
+          let stones = e.target.value;
+
+          document.getElementById('ounces-output').style.display = 'block';
+          document.getElementById('ounces-text').innerHTML = "<b>= " + (stones * 224).toFixed(2) + " oz</b>";
+          document.getElementById('pounds-output').style.display = 'block';
+          document.getElementById('pounds-text').innerHTML = "<b>= " + (stones * 14).toFixed(2) + " lb</b>";
+          document.getElementById('kilos-output').style.display = 'block';
+          document.getElementById('kilos-text').innerHTML = "<b>= " + (stones * 6.35).toFixed(2) + " kg</b>";
+
+          document.getElementById('ounces-input').style.display = 'none';
+          document.getElementById('ounces-input').nextElementSibling.style.display = 'none';
+          document.getElementById('pounds-input').style.display = 'none';
+          document.getElementById('pounds-input').nextElementSibling.style.display = 'none';
+          document.getElementById('kilos-input').style.display = 'none';
+          document.getElementById('kilos-input').nextElementSibling.style.display = 'none';
+          document.getElementById('stones-input').className = 'form-group-input form-control offset-5 col-2';
+
+          setTimeout(() => {
+            document.getElementById('ounces-output').style.display = 'none';
+            document.getElementById('pounds-output').style.display = 'none';
+            document.getElementById('kilos-output').style.display = 'none';
+            document.getElementById('ounces-input').style.display = 'block';
+            document.getElementById('pounds-input').style.display = 'block';
+            document.getElementById('kilos-input').style.display = 'block';
+            document.getElementById('ounces-input').nextElementSibling.style.display = 'block';
+            document.getElementById('pounds-input').nextElementSibling.style.display = 'block';
+            document.getElementById('kilos-input').nextElementSibling.style.display = 'block';
+            document.getElementById('stones-input').className = 'form-group-input form-control col-2';
+            document.getElementById('temp-form').style.display = 'block';
+            document.getElementById('length-form').style.display = 'block';
+          }, 8000);
+        }
+      }
+    }))
+
+  </script>
+
+</body>
+
+</html>
