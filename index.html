@@ -21,7 +21,9 @@
       padding-bottom: 20px;
     }
 
-    input {
+    input,
+    h1,
+    h2 {
       text-align: center;
     }
 
@@ -246,6 +248,7 @@
         document.getElementById('celsius-input').className = 'form-group-input form-control offset-5 col-2';
         document.getElementById('length-form').style.display = 'none';
         document.getElementById('mass-form').style.display = 'none';
+        document.querySelector('h1').style.display = 'none';
 
         // this.parentElement.parentElement.parentElement.onmouseleave = function() {
         //   document.getElementById('fahrenheit-output').style.display = 'none';
@@ -261,6 +264,7 @@
           document.getElementById('celsius-input').className = 'form-group-input form-control offset-3 col-2';
           document.getElementById('length-form').style.display = 'block';
           document.getElementById('mass-form').style.display = 'block';
+          document.querySelector('h1').style.display = 'block';
         }, 8000);
       } else if (input.id.includes('fahrenheit')) {
         let fahrenheit = e.target.value;
@@ -274,6 +278,7 @@
         document.getElementById('fahrenheit-input').style.textAlign = 'center';
         document.getElementById('length-form').style.display = 'none';
         document.getElementById('mass-form').style.display = 'none';
+        document.querySelector('h1').style.display = 'none';;
 
         setTimeout(() => {
           document.getElementById('celsius-output').style.display = 'none';
@@ -282,10 +287,13 @@
           document.getElementById('fahrenheit-input').className = 'form-group-input form-control offset-1 col-2';
           document.getElementById('length-form').style.display = 'block';
           document.getElementById('mass-form').style.display = 'block';
+          let heading = document.querySelector('h2');
+          document.querySelector('h1').style.display = 'block';
         }, 8000);
       } else if (input.id.includes('inches') || input.id.includes('feet') || input.id.includes('yards') || input.id.includes('metres') || input.id.includes('miles')) {
         document.getElementById('temp-form').style.display = 'none';
         document.getElementById('mass-form').style.display = 'none';
+        document.querySelector('h1').style.display = 'none';
 
         if (input.id.includes('inches')) {
 
@@ -326,6 +334,7 @@
             document.getElementById('inches-input').className = 'form-group-input form-control col-2 offset-3';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('mass-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('feet')) {
 
@@ -367,6 +376,7 @@
             document.getElementById('feet-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('mass-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('yards')) {
 
@@ -409,6 +419,7 @@
             document.getElementById('yards-input').className = 'form-group-input form-control col-2 offset-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('mass-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('metres')) {
 
@@ -452,6 +463,7 @@
             document.getElementById('metres-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('mass-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('miles')) {
 
@@ -492,9 +504,10 @@
             document.getElementById('miles-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('mass-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         }
-      } else if (input.id.includes('ounces') || input.id.includes('pounds') || input.id.includes('kilos') || input.id.includes('stones'))  {
+      } else if (input.id.includes('ounces') || input.id.includes('pounds') || input.id.includes('kilos') || input.id.includes('stones')) {
         document.getElementById('temp-form').style.display = 'none';
         document.getElementById('length-form').style.display = 'none';
         if (input.id.includes('ounces')) {
@@ -529,6 +542,7 @@
             document.getElementById('ounces-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('length-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('pounds')) {
 
@@ -562,6 +576,7 @@
             document.getElementById('pounds-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('length-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('kilos')) {
 
@@ -595,6 +610,7 @@
             document.getElementById('kilos-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('length-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         } else if (input.id.includes('stones')) {
 
@@ -628,6 +644,7 @@
             document.getElementById('stones-input').className = 'form-group-input form-control col-2';
             document.getElementById('temp-form').style.display = 'block';
             document.getElementById('length-form').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
           }, 8000);
         }
       }
